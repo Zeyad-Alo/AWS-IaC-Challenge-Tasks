@@ -1,6 +1,6 @@
 # AWS Infrastructure-as-Code Challenge Tasks
 
-Multiple challenges revolving around the use of AWS's CloudFront to make use of IaC through preparing YAML/JSON templates and deploying them into a CloudFront stack. Entirely executed with the AWS CLI only.
+Multiple challenges revolving around the use of AWS's CloudFormation to make use of IaC through preparing YAML/JSON templates and deploying them into a CloudFormation stack. Entirely executed with the AWS CLI only.
 
 This is part of Udacity's Cloud DevOps Nanodegree in partnership with EGFWD.
 
