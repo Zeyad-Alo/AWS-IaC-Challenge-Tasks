@@ -1,0 +1,16 @@
+[
+    {
+        "ParameterKey": "vpcsub",
+        "ParameterValue": "vpc-0e50697de0b1dddb0"
+    },
+
+    {
+        "ParameterKey": "subnetsub",
+        "ParameterValue": "subnet-08094fcf564170e3a"
+    },
+
+    {
+        "ParameterKey": "amisub",
+        "ParameterValue": "ami-0cff7528ff583bf9a"
+    }
+]

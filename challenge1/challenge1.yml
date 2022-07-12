@@ -1,0 +1,49 @@
+Description: >
+  Challenge 1, a script that creates an EC2 instance in a particular VPC security group
+
+Parameters:
+  vpcsub:
+    Type: AWS::EC2::VPC::Id
+  subnetsub:
+    Type: AWS::EC2::Subnet::Id
+  amisub:
+    Type: String
+
+Resources:
+  Challenge1SecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: Allow http access
+      GroupName: challenge1-security-group
+      VpcId:
+        Ref: vpcsub
+      SecurityGroupIngress:
+      - IpProtocol: tcp
+        FromPort: 80
+        ToPort: 80
+        CidrIp: 0.0.0.0/0
+      SecurityGroupEgress:
+      - IpProtocol: -1
+        FromPort: -1
+        ToPort: -1
+        CidrIp: 0.0.0.0/0
+  
+  Challenge1EC2Instance:
+    Type: AWS::EC2::Instance
+    Properties:
+      ImageId: !Ref amisub
+      InstanceType: t3.micro
+      NetworkInterfaces:
+      - AssociatePublicIpAddress: true
+        DeviceIndex: 0
+        GroupSet:
+          - Ref: Challenge1SecurityGroup
+        SubnetId:
+          Ref: subnetsub
+      UserData:
+        Fn::Base64: !Sub |
+          #!/bin/bash
+          sudo yum update -y
+          sudo yum install -y httpd
+          sudo systemctl start httpd
+          sudo systemctl enable httpd
