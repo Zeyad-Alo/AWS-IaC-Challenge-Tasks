@@ -12,3 +12,11 @@ This is part of Udacity's Cloud DevOps Nanodegree in partnership with EGFWD.
 ```
 aws cloudformation create-stack  --stack-name challenge1Stack --template-body file://challenge1.yml --parameters file://parameters.json
 ```
+
+
+## Challenge 2 - Create the required networking IaC scripts for a new cloud environment in AWS.
+### Requirements Diagram:
+![img](./req.png)
+```
+./create.sh infraStack infra.yml infra-param.json
+```
