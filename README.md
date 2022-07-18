@@ -16,7 +16,7 @@ aws cloudformation create-stack  --stack-name challenge1Stack --template-body fi
 
 ## Challenge 2 - Create the required networking IaC scripts for a new cloud environment in AWS.
 ### Requirements Diagram:
-![img](./req.png)
+![img](./challenge2/req.png)
 ```
 ./create.sh infraStack infra.yml infra-param.json
 ```
